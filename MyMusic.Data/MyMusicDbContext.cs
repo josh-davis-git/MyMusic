@@ -9,6 +9,8 @@ namespace MyMusic.Data
     {
         public DbSet<Music> Musics { get; set; }
         public DbSet<Artist> Artists { get; set; }
+        public DbSet<User> Users { get; set; }
+
 
         public MyMusicDbContext(DbContextOptions<MyMusicDbContext> options) : base(options)
         {
@@ -20,6 +22,9 @@ namespace MyMusic.Data
 
             builder
                 .ApplyConfiguration(new ArtistConfiguration());
+            
+            builder
+                .ApplyConfiguration(new UserConfiguration());
         }
     }
 }
